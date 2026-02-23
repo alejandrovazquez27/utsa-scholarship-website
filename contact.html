@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact | UTSA Scholarship & Labs</title>
+  <title>Contact | Lone Star College STEM Scholars</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="container">
     <div class="nav">
-      <div class="brand">UTSA Scholarship & Labs</div>
+      <div class="brand">
+        Lone Star College STEM Scholars
+        <span class="badge">Contact</span>
+      </div>
       <div class="navlinks">
         <a href="index.html">Home</a>
         <a href="interest.html">Interest Form</a>
@@ -18,33 +21,60 @@
     </div>
 
     <div class="hero">
-      <h1>Contact us</h1>
-      <p>Questions about the org, scholarship cycles, or labs? Send a message and we’ll get back to you.</p>
+      <div class="kicker">Questions? We’ll point you to the right place.</div>
+      <h1>Contact the partnership team</h1>
+      <p>
+        If your question isn’t answered on the official scholarship page, send us a message and we’ll help you find the
+        right UTSA resource.
+      </p>
+      <div class="btnrow">
+        <a class="btn secondary" href="https://klesse.utsa.edu/student/lscholar.html" target="_blank" rel="noopener">
+          Official UTSA Scholarship Page
+        </a>
+        <a class="btn" href="interest.html">Submit Interest Form</a>
+      </div>
     </div>
 
     <div class="grid">
-      <div class="card" style="grid-column: span 12;">
-        <form name="contact" method="post">
+      <div class="card full">
+        <!-- Same note as interest form: needs Google Form / Netlify Forms / backend -->
+        <form name="lsc-stem-contact" method="post">
           <label for="cname">Name *</label>
-          <input id="cname" name="name" required />
+          <input id="cname" name="name" autocomplete="name" required />
 
           <label for="cemail">Email *</label>
-          <input id="cemail" name="email" type="email" required />
+          <input id="cemail" name="email" type="email" autocomplete="email" required />
+
+          <label for="topic">Topic</label>
+          <select id="topic" name="topic">
+            <option value="">Select one</option>
+            <option>Eligibility / requirements</option>
+            <option>Transfer steps</option>
+            <option>Scholarship Hub / application</option>
+            <option>Events / info sessions</option>
+            <option>Other</option>
+          </select>
 
           <label for="msg">Message *</label>
           <textarea id="msg" name="message" required></textarea>
 
           <div class="hr"></div>
           <button class="btn primary" type="submit">Send</button>
+
           <p class="small">
-            Or email us directly at: <b>ORG_EMAIL@utsa.edu</b> (replace with real email)
+            Please do not include sensitive information (SSN, banking info, full address). For official eligibility and
+            steps, always refer to the UTSA scholarship page.
           </p>
+
+          <div class="callout" style="margin-top:10px;">
+            Replace this placeholder with the correct contact email(s): <b>PARTNERSHIP_EMAIL@utsa.edu</b>
+          </div>
         </form>
       </div>
     </div>
 
     <div class="footer">
-      © <span id="y"></span> UTSA Scholarship & Labs
+      © <span id="y"></span> Lone Star College STEM Scholars
     </div>
   </div>
 
