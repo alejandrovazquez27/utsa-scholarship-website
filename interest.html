@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Interest Form | UTSA Scholarship & Labs</title>
+  <title>Interest Form | Lone Star College STEM Scholars</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="container">
     <div class="nav">
-      <div class="brand">UTSA Scholarship & Labs</div>
+      <div class="brand">
+        Lone Star College STEM Scholars
+        <span class="badge">Interest Form</span>
+      </div>
       <div class="navlinks">
         <a href="index.html">Home</a>
         <a href="interest.html">Interest Form</a>
@@ -18,43 +21,68 @@
     </div>
 
     <div class="hero">
-      <h1>Prospective Student Interest Form</h1>
+      <div class="kicker">Help us track incoming transfers</div>
+      <h1>Tell us you’re interested in transferring to UTSA</h1>
       <p>
-        This form helps us understand how many students are planning to apply/attend UTSA.
-        We may contact you with scholarship information, events, and updates.
+        This form helps our partnership team understand how many Lone Star STEM students are planning to transfer and
+        what support you may need.
       </p>
-      <p class="small">
-        We will not sell your information. Use a personal email you check regularly.
-      </p>
+      <div class="callout">
+        For official scholarship details and eligibility, see the UTSA page:
+        <a href="https://klesse.utsa.edu/student/lscholar.html" target="_blank" rel="noopener"><b>Official UTSA Scholarship Page</b></a>
+      </div>
     </div>
 
     <div class="grid">
-      <div class="card" style="grid-column: span 12;">
-        <!-- Hook this up to Netlify Forms or replace with an embedded Google Form -->
-        <form name="interest" method="post">
+      <div class="card full">
+        <!--
+          SUBMISSIONS NOTE:
+          This form currently posts nowhere (static hosting).
+          EASIEST OPTIONS:
+          1) Replace this whole form with an embedded Google Form
+          2) Use Netlify Forms (add netlify attribute + deploy on Netlify)
+        -->
+
+        <form name="lsc-stem-interest" method="post">
           <label for="name">Full Name *</label>
-          <input id="name" name="name" required />
+          <input id="name" name="name" autocomplete="name" required />
 
           <label for="email">Email *</label>
-          <input id="email" name="email" type="email" required />
+          <input id="email" name="email" type="email" autocomplete="email" required />
 
-          <label for="major">Intended Major *</label>
+          <label for="lsc">Lone Star College Campus (optional)</label>
+          <input id="lsc" name="lsc_campus" placeholder="e.g., LSC-CyFair, LSC-Kingwood, etc." />
+
+          <label for="major">Current or Intended STEM Major *</label>
           <input id="major" name="major" required />
 
-          <label for="term">Expected Start Term *</label>
-          <select id="term" name="term" required>
+          <label for="term">Expected Transfer Term to UTSA *</label>
+          <select id="term" name="transfer_term" required>
             <option value="">Select one</option>
             <option>Fall 2026</option>
             <option>Spring 2027</option>
             <option>Fall 2027</option>
-            <option>Other</option>
+            <option>Other / Not sure</option>
           </select>
 
-          <label for="school">Current School (High School / College) *</label>
-          <input id="school" name="school" required />
+          <label for="hours">Completed Credit Hours at Lone Star (estimate)</label>
+          <select id="hours" name="credit_hours">
+            <option value="">Select one</option>
+            <option>0–23</option>
+            <option>24–45</option>
+            <option>46–60</option>
+            <option>60+</option>
+          </select>
 
-          <label for="location">City / State *</label>
-          <input id="location" name="location" required />
+          <label for="gpa">Current GPA Range (optional)</label>
+          <select id="gpa" name="gpa_range">
+            <option value="">Select one</option>
+            <option>Below 2.75</option>
+            <option>2.75–3.24</option>
+            <option>3.25–3.74</option>
+            <option>3.75–4.0</option>
+            <option>Prefer not to say</option>
+          </select>
 
           <label for="status">UTSA Application Status</label>
           <select id="status" name="utsa_status">
@@ -62,21 +90,37 @@
             <option>Not started</option>
             <option>In progress</option>
             <option>Submitted</option>
-            <option>Accepted</option>
+            <option>Admitted</option>
           </select>
 
-          <label for="notes">Anything you'd like us to know?</label>
-          <textarea id="notes" name="notes"></textarea>
+          <label for="updates">What updates would you like?</label>
+          <select id="updates" name="updates">
+            <option value="">Select one</option>
+            <option>Scholarship reminders</option>
+            <option>Transfer steps + advising info</option>
+            <option>Events / info sessions</option>
+            <option>All of the above</option>
+          </select>
+
+          <label for="notes">Questions or anything you’d like us to know?</label>
+          <textarea id="notes" name="notes" placeholder="Example: I’m not sure which UTSA STEM major fits my path…"></textarea>
 
           <div class="hr"></div>
-          <button class="btn primary" type="submit">Submit Interest</button>
-          <p class="small">* indicates required fields</p>
+          <button class="btn primary" type="submit">Submit</button>
+
+          <p class="small">
+            * Required fields. Please do not submit sensitive information (SSN, banking info, full address).
+          </p>
+          <p class="small">
+            By submitting, you agree we may contact you about partnership updates and resources related to transferring
+            from Lone Star College to UTSA.
+          </p>
         </form>
       </div>
     </div>
 
     <div class="footer">
-      © <span id="y"></span> UTSA Scholarship & Labs
+      © <span id="y"></span> Lone Star College STEM Scholars
     </div>
   </div>
 
