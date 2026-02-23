@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lone Star College STEM Scholars → UTSA</title>
+  <title>Interest Form | Lone Star College STEM Scholars</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -11,7 +11,7 @@
     <div class="nav">
       <div class="brand">
         Lone Star College STEM Scholars
-        <span class="badge">Transfer → UTSA</span>
+        <span class="badge">Interest Form</span>
       </div>
       <div class="navlinks">
         <a href="index.html">Home</a>
@@ -21,87 +21,99 @@
     </div>
 
     <div class="hero">
-      <div class="kicker">UTSA × Lone Star College partnership</div>
-      <h1>Make your way to UTSA.</h1>
+      <div class="kicker">Help us track incoming transfers</div>
+      <h1>Tell us you’re interested in transferring to UTSA</h1>
       <p>
-        If you’re a Lone Star College STEM student planning to transfer to UTSA, we want to support your next steps.
-        Use the interest form so we can understand how many students are coming in and share scholarship updates, events,
-        and reminders.
+        This form helps our partnership team understand how many Lone Star STEM students are planning to transfer and
+        what support you may need.
       </p>
-
-      <div class="btnrow">
-        <a class="btn primary" href="interest.html">I’m a Lone Star STEM student → I’m interested</a>
-        <a class="btn secondary" href="https://klesse.utsa.edu/student/lscholar.html" target="_blank" rel="noopener">
-          View Official Scholarship Details (UTSA)
-        </a>
-      </div>
-
-      <div class="hr"></div>
       <div class="callout">
-        Submitting our interest form is <b>not</b> the official scholarship application.
-        It helps our partnership team track interest and share resources early.
+        For official scholarship details and eligibility, see:
+        <a href="https://klesse.utsa.edu/student/lscholar.html" target="_blank" rel="noopener"><b>Official UTSA Scholarship Page</b></a>
       </div>
     </div>
 
     <div class="grid">
-      <div class="card">
-        <h2>What this site is for</h2>
-        <ul>
-          <li>Track how many Lone Star STEM students plan to transfer to UTSA</li>
-          <li>Share scholarship reminders and next steps</li>
-          <li>Answer questions and route students to the right UTSA resources</li>
-        </ul>
-        <p class="mini">For full eligibility rules and official instructions, use the UTSA page linked above.</p>
-      </div>
-
-      <div class="card">
-        <h2>Quick next steps</h2>
-        <ol style="margin:8px 0 0; padding-left:18px;">
-          <li>Submit the Interest Form on this site.</li>
-          <li>Apply to UTSA as a transfer student (official UTSA process).</li>
-          <li>Once admitted, apply through the UTSA Scholarship Hub (per UTSA instructions).</li>
-        </ol>
-        <p class="mini">Exact steps can change by term—always follow the official UTSA page for final instructions.</p>
-      </div>
-
-      <div class="card">
-        <h2>Who should submit the interest form?</h2>
-        <p>
-          Any Lone Star College student pursuing a STEM pathway who is considering UTSA—whether you’ve applied yet or not.
-        </p>
-        <ul>
-          <li>Not applied yet? Still submit.</li>
-          <li>Applied and waiting? Submit.</li>
-          <li>Admitted and planning to enroll? Definitely submit.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>What happens after you submit?</h2>
-        <p>
-          Our team may email you with partnership updates, deadlines, info sessions, and reminders related to transfer
-          steps and scholarship processes.
-        </p>
-        <div class="callout warn" style="margin-top:10px;">
-          Please do not submit sensitive information (SSN, banking info, full address, etc.).
-        </div>
-      </div>
-
       <div class="card full">
-        <h2>Need help right now?</h2>
-        <p>
-          If you have a question that isn’t answered on the UTSA scholarship page, use our contact page and we’ll point
-          you to the right office or resource.
-        </p>
-        <div class="btnrow">
-          <a class="btn" href="contact.html">Go to Contact</a>
-          <a class="btn" href="interest.html">Go to Interest Form</a>
-        </div>
+        <!-- NOTE: This is a static form. Connect it to Google Forms or Netlify Forms later. -->
+        <form name="lsc-stem-interest" method="post">
+          <label for="name">Full Name *</label>
+          <input id="name" name="name" autocomplete="name" required />
+
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+
+          <label for="lsc">Lone Star College Campus (optional)</label>
+          <input id="lsc" name="lsc_campus" placeholder="e.g., LSC-CyFair, LSC-Kingwood, etc." />
+
+          <label for="major">Current or Intended STEM Major *</label>
+          <input id="major" name="major" required />
+
+          <label for="term">Expected Transfer Term to UTSA *</label>
+          <select id="term" name="transfer_term" required>
+            <option value="">Select one</option>
+            <option>Fall 2026</option>
+            <option>Spring 2027</option>
+            <option>Fall 2027</option>
+            <option>Other / Not sure</option>
+          </select>
+
+          <label for="hours">Completed Credit Hours at Lone Star (estimate)</label>
+          <select id="hours" name="credit_hours">
+            <option value="">Select one</option>
+            <option>0–23</option>
+            <option>24–45</option>
+            <option>46–60</option>
+            <option>60+</option>
+          </select>
+
+          <label for="gpa">Current GPA Range (optional)</label>
+          <select id="gpa" name="gpa_range">
+            <option value="">Select one</option>
+            <option>Below 2.75</option>
+            <option>2.75–3.24</option>
+            <option>3.25–3.74</option>
+            <option>3.75–4.0</option>
+            <option>Prefer not to say</option>
+          </select>
+
+          <label for="status">UTSA Application Status</label>
+          <select id="status" name="utsa_status">
+            <option value="">Select one</option>
+            <option>Not started</option>
+            <option>In progress</option>
+            <option>Submitted</option>
+            <option>Admitted</option>
+          </select>
+
+          <label for="updates">What updates would you like?</label>
+          <select id="updates" name="updates">
+            <option value="">Select one</option>
+            <option>Scholarship reminders</option>
+            <option>Transfer steps + advising info</option>
+            <option>Events / info sessions</option>
+            <option>All of the above</option>
+          </select>
+
+          <label for="notes">Questions or anything you’d like us to know?</label>
+          <textarea id="notes" name="notes" placeholder="Example: I’m not sure which UTSA STEM major fits my path…"></textarea>
+
+          <div class="hr"></div>
+          <button class="btn primary" type="submit">Submit</button>
+
+          <p class="small">
+            * Required fields. Please do not submit sensitive information (SSN, banking info, full address).
+          </p>
+          <p class="small">
+            By submitting, you agree we may contact you about partnership updates and resources related to transferring
+            from Lone Star College to UTSA.
+          </p>
+        </form>
       </div>
     </div>
 
     <div class="footer">
-      © <span id="y"></span> Lone Star College STEM Scholars • Partnership support site
+      © <span id="y"></span> Lone Star College STEM Scholars
     </div>
   </div>
 
