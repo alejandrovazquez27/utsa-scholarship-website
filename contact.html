@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | UTSA Scholarship & Labs</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">UTSA Scholarship & Labs</div>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="interest.html">Interest Form</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <h1>Contact us</h1>
+      <p>Questions about the org, scholarship cycles, or labs? Send a message and we’ll get back to you.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card" style="grid-column: span 12;">
+        <form name="contact" method="post">
+          <label for="cname">Name *</label>
+          <input id="cname" name="name" required />
+
+          <label for="cemail">Email *</label>
+          <input id="cemail" name="email" type="email" required />
+
+          <label for="msg">Message *</label>
+          <textarea id="msg" name="message" required></textarea>
+
+          <div class="hr"></div>
+          <button class="btn primary" type="submit">Send</button>
+          <p class="small">
+            Or email us directly at: <b>ORG_EMAIL@utsa.edu</b> (replace with real email)
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer">
+      © <span id="y"></span> UTSA Scholarship & Labs
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
